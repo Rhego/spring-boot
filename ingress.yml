@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: spring-ingress
+spec:
+   backend:
+         serviceName: servicespring
+         servicePort: 8080
+   rules:
+     - host: everis.challenge.com
+       http:
+         paths:
+         - backend:
+             serviceName: servicespring
+             servicePort: 8080
+           path: /*
+
